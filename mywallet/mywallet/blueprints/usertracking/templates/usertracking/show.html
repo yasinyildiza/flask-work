@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  {{ modelname }} | {{ record.id }}
+{% endblock %}
+
+{% block body %}
+<table border="1">
+  <tbody>
+    <tr>
+      <th>ID</th>
+      <td>{{ record.id }}</td>
+    </tr>
+    <tr>
+      <th>Username</th>
+      <td>{{ record.user.username }}</td>
+    </tr>
+    <tr>
+      <th>IP</th>
+      <td>{{ record.ip }}</td>
+    </tr>
+    <tr>
+      <th>URL</th>
+      <td>{{ record.url }}</td>
+    </tr>
+    <tr>
+      <th>Created at</th>
+      <td>{{ record.created_at }}</td>
+    </tr>
+    <tr>
+      <th>Actions</th>
+      <td>{% include 'usertracking/actions.html' %}</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,2 @@
+graft mywallet/templates
+graft mywallet/static

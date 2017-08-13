@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  {{ modelname }}
+{% endblock %}
+
+{% block body %}
+<table border="1">
+  <tbody>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Is Active?</th>
+      <th>Is Admin?</th>
+      <th>Actions</th>
+    </tr>
+    {% for record in records %}
+      <tr>
+        <td>{{ record.id }}</td>
+        <td>{{ record.username }}</td>
+        <td>{{ record.is_active }}</td>
+        <td>{{ record.is_admin }}</td>
+        <td>
+          {% include 'user/actions.html' %}
+        </td>
+      </tr>
+    {% else %}
+      <tr>
+        <td colspan="3">No record found.</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+</table>
+{% endblock %}

@@ -1,0 +1,26 @@
+<html>
+  <head></head>
+  <body>
+    <div class="navigation">
+    <a href="{{ url_for('home') }}">Home</a> |
+    {% if g.user %}
+      <a href="{{ url_for('signout') }}">Sign Out [{{ g.user.username }}]</a>
+    {% else %}
+      <a href="{{ url_for('signup') }}">Sign Up</a> |
+      <a href="{{ url_for('signin') }}">Sign In</a>
+    {% endif %}
+    </div>
+    <div class="body">
+      {% with flashes = get_flashed_messages() %}
+        {% if flashes %}
+          <ul class="flashes">
+          {% for msg in flashes %}
+            <li>{{ msg }}
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      {% block body %}{% endblock %}
+    </div>
+  </body>
+</html>

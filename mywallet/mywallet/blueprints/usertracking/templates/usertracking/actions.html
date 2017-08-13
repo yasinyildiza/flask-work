@@ -1,0 +1,4 @@
+<a href="{{ url_for('usertracking.show', id=record.id) }}">Details</a> |
+<form action="{{ url_for('usertracking.delete', id=record.id) }}" method="POST" style="display:inline; margin: 0; padding: 0;">
+    <a href="#" onclick="$(this).closest('form').submit()">Delete</a>
+</form>

@@ -1,0 +1,12 @@
+{% if form.errors %}
+  <div class="error">
+    {% for field, messages in form.errors.iteritems() %}
+      <li>
+        {{ field }}:
+        {% for message in messages %}
+          <ul>{{ message }}</ul>
+        {% endfor %}
+      </li>
+    {% endfor %}
+  </div>
+{% endif %}

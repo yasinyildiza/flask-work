@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %}Welcome!{% endblock %}
+{% block body %}
+  <h2>Sign Up</h2>
+  {% include 'form_errors.html' %}
+
+  <form action="" method="post">
+    {{ form.csrf_token }}
+    <dl>
+      <dt>{{ form.username.label }}</dt>
+      <dd>{{ form.username }}</dd>
+
+      <dt>{{ form.password.label }}</dt>
+      <dd>{{ form.password }}</dd>
+
+      <dt>{{ form.password2.label }}</dt>
+      <dd>{{ form.password2 }}</dd>
+
+      <br/>
+
+      <dt>{{ form.first_name.label }}</dt>
+      <dd>{{ form.first_name }}</dd>
+
+      <dt>{{ form.last_name.label }}</dt>
+      <dd>{{ form.last_name }}</dd>
+
+      <dt>{{ form.email.label }}</dt>
+      <dd>{{ form.email }}</dd>
+      
+    </dl>
+    <div class="actions"><input type="submit" value="Sign Up" /></div>
+  </form>
+{% endblock %}

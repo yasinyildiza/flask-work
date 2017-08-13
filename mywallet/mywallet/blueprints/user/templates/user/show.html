@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  {{ modelname }} | {{ record.id }}
+{% endblock %}
+
+{% block body %}
+<table border="1">
+  <tbody>
+    <tr>
+      <th>ID</th>
+      <td>{{ record.id }}</td>
+    </tr>
+    <tr>
+      <th>Username</th>
+      <td>{{ record.username }}</td>
+    </tr>
+    <tr>
+      <th>First Name</th>
+      <td>{{ record.first_name }}</td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td>{{ record.last_name }}</td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>{{ record.email }}</td>
+    </tr>
+    <tr>
+      <th>Is Active</th>
+      <td>{{ record.is_active }}</td>
+    </tr>
+    <tr>
+      <th>Is Admin</th>
+      <td>{{ record.is_admin }}</td>
+    </tr>
+    <tr>
+      <th>Created at</th>
+      <td>{{ record.created_at }}</td>
+    </tr>
+    <tr>
+      <th>Updated at</th>
+      <td>{{ record.updated_at }}</td>
+    </tr>
+    <tr>
+      <th>Actions</th>
+      <td>{% include 'user/actions.html' %}</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

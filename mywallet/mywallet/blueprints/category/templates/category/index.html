@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  {{ modelname }}
+{% endblock %}
+
+{% block body %}
+<a href="{{ url_for('category.create') }}">New</a>
+<table border="1">
+  <tbody>
+    <tr>
+      <th>ID</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+    {% for record in records %}
+      <tr>
+        <td>{{ record.id }}</td>
+        <td>{{ record.code }}</td>
+        <td>{{ record.name }}</td>
+        <td>
+          {% include 'category/actions.html' %}
+        </td>
+      </tr>
+    {% else %}
+      <tr>
+        <td colspan="4">No record found.</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+</table>
+{% endblock %}

@@ -1,0 +1,5 @@
+<a href="{{ url_for('tag.show', id=record.id) }}">Details</a> |
+<a href="{{ url_for('tag.update', id=record.id) }}">Edit</a> |
+<form action="{{ url_for('tag.delete', id=record.id) }}" method="POST" style="display:inline; margin: 0; padding: 0;">
+    <a href="#" onclick="$(this).closest('form').submit()">Delete</a>
+</form>

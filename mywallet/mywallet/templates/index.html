@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Hello, World!
+{% endblock %}
+
+{% block body %}
+  <h2>{{ self.title() }}</h2>
+  <h4>
+    {% if g.user %}
+      Hi, {{ g.user.username }}
+    {% else %}
+      Welcome to MyWallet
+    {% endif %}
+  </h4>
+  </ul>
+{% endblock %}
